@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Lan Chi 🌸 - A Special Dedicated Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: '#fff0f3',
+                        rosepink: '#ffb3c6',
+                        deeprose: '#ff4d6d',
+                        softcream: '#fff9fb',
+                        lavenderaccent: '#e2d9f3',
+                        warmgold: '#d4af37'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Quicksand"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff0f3;
+            color: #4a4044;
+            overflow-x: hidden;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Floating background hearts animation */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            color: rgba(255, 105, 135, 0.4);
+            animation: floatUp 8s infinite linear;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff0f3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffb3c6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff4d6d;
+        }
+    </style>
+</head>
+<body class="bg-blush relative min-h-screen flex flex-col justify-between selection:bg-rosepink selection:text-white">
+
+    <!-- Floating Hearts Background Container -->
+    <div id="hearts-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-rose-100 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-deeprose flex items-center gap-2">
+                <span>Lan Chi</span>
+                <span class="text-xl">🌸</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                <a href="#hero" class="hover:text-deeprose transition-colors">Home</a>
+                <a href="#memories" class="hover:text-deeprose transition-colors">Memory Lane</a>
+                <a href="#qualities" class="hover:text-deeprose transition-colors">Why You're Special</a>
+                <a href="#letter" class="hover:text-deeprose transition-colors">Letter</a>
+                <a href="#interactive" class="hover:text-deeprose transition-colors">Magic Corner</a>
+            </div>
+            <button onclick="spawnHeartBurst()" class="bg-gradient-to-r from-rosepink to-deeprose text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-heart animate-pulse"></i> Send Love
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative z-10 max-w-5xl mx-auto px-6 pt-16 pb-24 text-center flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 bg-white/80 border border-rose-200 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-deeprose uppercase mb-6 shadow-sm animate-bounce">
+            <span>✨ Dedicated to an Amazing Friend</span>
+        </div>
+        
+        <h1 class="font-serif text-5xl md:text-7xl font-bold text-gray-800 leading-tight mb-6">
+            For <span class="text-transparent bg-clip-text bg-gradient-to-r from-deeprose to-pink-500 underline decoration-rose-300 decoration-wavy decoration-1">Lan Chi</span> 🌸
+        </h1>
+        
+        <p class="max-w-2xl text-lg md:text-xl text-gray-600 mb-10 font-medium leading-relaxed">
+            A little digital sanctuary created just for you. Filled with warmth, appreciation, and gentle reminders of how wonderful our friendship is, across distances and time zones!
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <a href="#memories" class="bg-deeprose text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-deeprose/30 hover:bg-rose-600 transform hover:-translate-y-1 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-camera-retro"></i> Explore Memory Lane
+            </a>
+            <a href="#letter" class="bg-white text-gray-700 border border-rose-200 px-8 py-3.5 rounded-full font-semibold shadow-sm hover:bg-rose-50 hover:text-deeprose transform hover:-translate-y-1 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-envelope-open-text text-deeprose">></i> Read My Note
+            </a>
+        </div>
+
+        <!-- Decorative Hero Badge / Avatar Card -->
+        <div class="mt-16 relative">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-rosepink to-lavenderaccent rounded-3xl blur-md opacity-70"></div>
+            <div class="relative bg-white p-6 rounded-3xl shadow-xl border border-rose-100 max-w-md mx-auto flex items-center gap-4 text-left">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-rose-100 to-rose-300 flex items-center justify-center text-3xl shadow-inner flex-shrink-0">
+                    💖
+                </div>
+                <div>
+                    <h3 class="font-serif font-bold text-lg text-gray-800">Friendship knows no borders</h3>
+                    <p class="text-sm text-gray-500 mt-0.5">"Having a friend like you makes every single day brighter."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Lane / Interactive Gallery -->
+    <section id="memories" class="relative z-10 bg-white/60 backdrop-blur-sm py-20 border-y border-rose-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-deeprose font-semibold uppercase tracking-widest text-xs">Precious Moments</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mt-2">Memory Lane 📸</h2>
+                <p class="text-gray-600 mt-3 text-sm md:text-base">Moments, snapshots, and vibes that capture our wonderful connection.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Memory Card 1 -->
+                <div class="bg-white p-4 rounded-3xl shadow-md border border-rose-100 group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-rose-50 mb-4">
+                        <img src="https://placehold.co/600x450/ffb3c6/ffffff?text=Our+First+Chat+%F0%9F%8C%B8" alt="Memory 1" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-deeprose shadow-sm">
+                            #01
+                        </div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-gray-800 mb-1">Where It All Began</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Connecting across the miles and realizing we share the same goofy laughter and kind heart.</p>
+                </div>
+
+                <!-- Memory Card 2 -->
+                <div class="bg-white p-4 rounded-3xl shadow-md border border-rose-100 group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-rose-50 mb-4">
+                        <img src="https://placehold.co/600x450/e2d9f3/6b46c1?text=Late+Night+Chats+%F0%9F%8C%99" alt="Memory 2" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-deeprose shadow-sm">
+                            #02
+                        </div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-gray-800 mb-1">Endless Conversations</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">From random daily updates to deep life thoughts—time zones never stopped us from talking.</p>
+                </div>
+
+                <!-- Memory Card 3 -->
+                <div class="bg-white p-4 rounded-3xl shadow-md border border-rose-100 group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-rose-50 mb-4">
+                        <img src="https://placehold.co/600x450/fff0f3/ff4d6d?text=Future+Meetup+%E2%9C%A8" alt="Memory 3" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-deeprose shadow-sm">
+                            #03
+                        </div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-gray-800 mb-1">Future Adventures</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Dreaming of the day we finally get to hang out in person, eat good food, and take tons of photos!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why You're Special Section -->
+    <section id="qualities" class="relative z-10 max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-deeprose font-semibold uppercase tracking-widest text-xs">Appreciation</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mt-2">Why You're So Special 🌷</h2>
+            <p class="text-gray-600 mt-3 text-sm md:text-base">Here are just a few of the things that make you an absolute joy to know.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Quality 1 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 hover:border-rose-300 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-deeprose flex items-center justify-center text-xl mb-4 group-hover:bg-deeprose group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-face-smile-beam"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-gray-800 mb-2">Radiant Positivity</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Your energy and bright smile have a magical way of turning any ordinary day into a wonderful one.</p>
+            </div>
+
+            <!-- Quality 2 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 hover:border-rose-300 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-deeprose flex items-center justify-center text-xl mb-4 group-hover:bg-deeprose group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-ear-listen"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-gray-800 mb-2">A Great Listener</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">You always give the best advice, listen with a caring heart, and make me feel completely heard.</p>
+            </div>
+
+            <!-- Quality 3 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 hover:border-rose-300 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-deeprose flex items-center justify-center text-xl mb-4 group-hover:bg-deeprose group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-gray-800 mb-2">Cultural Bridge</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Learning about your culture, language, and everyday life has been such an incredible and enriching experience.</p>
+            </div>
+
+            <!-- Quality 4 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 hover:border-rose-300 transition-all group">
+                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-deeprose flex items-center justify-center text-xl mb-4 group-hover:bg-deeprose group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-gray-800 mb-2">A True Friend</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Even though we live far apart, your loyalty and kindness make you feel right next door.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Letter Section -->
+    <section id="letter" class="relative z-10 bg-white/70 backdrop-blur-sm py-20 border-y border-rose-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-deeprose font-semibold uppercase tracking-widest text-xs">Heart to Heart</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mt-2">A Note For You 💌</h2>
+                <p class="text-gray-600 mt-2 text-sm">Click the envelope below to open your personal message.</p>
+            </div>
+
+            <!-- Envelope Wrapper -->
+            <div class="max-w-2xl mx-auto">
+                <div id="envelope-box" onclick="toggleLetter()" class="cursor-pointer bg-gradient-to-br from-rose-100 to-rose-200 p-8 rounded-3xl shadow-lg border border-rose-300 text-center transform transition-all hover:scale-[1.01] relative overflow-hidden">
+                    <div id="envelope-closed" class="py-8">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-md mb-4 text-3xl text-deeprose animate-pulse">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-800">To: Lan Chi</h3>
+                        <p class="text-sm text-gray-600 mt-1">Tap to open letter ✨</p>
+                    </div>
+
+                    <!-- Open Letter Content (Hidden initially) -->
+                    <div id="letter-content" class="hidden text-left bg-white/95 p-8 rounded-2xl shadow-inner border border-rose-100 space-y-4">
+                        <div class="flex justify-between items-center border-b border-rose-100 pb-3">
+                            <span class="font-serif font-bold text-deeprose text-lg">Dearest Lan Chi,</span>
+                            <span class="text-xs text-gray-400">With lots of warmth 🌸</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                            I wanted to build this special little corner on the web just to remind you how much your friendship means to me. Even though oceans and distance separate us, talking to you always brings a smile to my face. 
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                            Thank you for being such a wonderful, kind, and inspiring soul. May your days be filled with happiness, success, and all things pink and lovely! 
+                        </p>
+                        <div class="pt-4 flex justify-between items-center">
+                            <p class="font-serif italic text-gray-600 text-sm">Your friend always,</p>
+                            <button onclick="event.stopPropagation(); toggleLetter();" class="text-xs text-deeprose font-semibold hover:underline">
+                                <i class="fa-solid fa-arrow-up"></i> Close Letter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Magic Corner Section -->
+    <section id="interactive" class="relative z-10 max-w-5xl mx-auto px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-deeprose font-semibold uppercase tracking-widest text-xs">Fun & Vibe</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mt-2">Magic Corner ✨</h2>
+            <p class="text-gray-600 mt-3 text-sm md:text-base">Click around to generate positivity and good vibes!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Heart Generator Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-md border border-rose-100 flex flex-col justify-between text-center">
+                <div>
+                    <div class="w-14 h-14 bg-rose-50 text-deeprose rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4 shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-gray-800 mb-2">Floating Heart Shower</h3>
+                    <p class="text-sm text-gray-500 mb-6">Send a shower of hearts across the screen right now!</p>
+                </div>
+                <button onclick="spawnHeartBurst()" class="w-full bg-gradient-to-r from-rosepink to-deeprose text-white py-3.5 rounded-2xl font-semibold shadow-md hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart"></i> Trigger Heart Burst
+                </button>
+            </div>
+
+            <!-- Cute Playlist / Vibe Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-md border border-rose-100 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 bg-pink-50 text-pink-500 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4 shadow-sm">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-gray-800 mb-2 text-center">Friendship Soundtrack</h3>
+                    <p class="text-sm text-gray-500 mb-4 text-center">Current vibe: Soft lo-fi beats, warm coffee, and good conversations.</p>
+                </div>
+                
+                <div class="bg-rose-50 p-4 rounded-2xl flex items-center justify-between border border-rose-100">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-deeprose text-white flex items-center justify-center text-sm shadow-sm">
+                            <i id="play-icon" class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 id="song-title" class="text-xs font-bold text-gray-800">Aesthetic Pink Afternoon</h4>
+                            <p class="text-[10px] text-gray-500">Lan Chi & Friend Vibe</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleMusicVibe()" id="music-btn" class="bg-white text-deeprose px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-rose-100 transition-colors">
+                        Play Vibe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-white/80 border-t border-rose-100 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-serif text-2xl font-bold text-deeprose mb-2">Lan Chi 🌸</h2>
+            <p class="text-sm text-gray-500 mb-6">Made with all the warmth, care, and pink aesthetic in the world.</p>
+            <div class="flex justify-center gap-4 text-deeprose text-lg mb-6">
+                <span class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center"><i class="fa-solid fa-heart"></i></span>
+                <span class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center"><i class="fa-solid fa-sparkles"></i></span>
+                <span class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center"><i class="fa-solid fa-star"></i></span>
+            </div>
+            <p class="text-xs text-gray-400">&copy; 2026 Dedicated Friendship Website. Spread love everywhere!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Functionality -->
+    <script>
+        // Generate continuous floating background hearts
+        function createBackgroundHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            
+            const icons = ['fa-heart', 'fa-spa', 'fa-star', 'fa-seedling'];
+            const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+            heart.innerHTML = `<i class="fa-solid ${randomIcon}"></i>`;
+            
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 16 + 12) + 'px';
+            
+            const duration = Math.random() * 6 + 6;
+            heart.style.animationDuration = duration + 's';
+            
+            container.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+
+        // Spawn background hearts periodically
+        setInterval(createBackgroundHeart, 800);
+
+        // Burst hearts on demand
+        function spawnHeartBurst() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('fixed', 'text-deeprose', 'pointer-events-none', 'z-50', 'animate-ping');
+                    heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                    
+                    const startX = window.innerWidth / 2;
+                    const startY = window.innerHeight / 2;
+                    
+                    heart.style.left = startX + (Math.random() * 300 - 150) + 'px';
+                    heart.style.top = startY + (Math.random() * 300 - 150) + 'px';
+                    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 1000);
+                }, i * 40);
+            }
+        }
+
+        // Letter toggle function
+        let isLetterOpen = false;
+        function toggleLetter() {
+            const closedView = document.getElementById('envelope-closed');
+            const openView = document.getElementById('letter-content');
+            
+            isLetterOpen = !isLetterOpen;
+            if (isLetterOpen) {
+                closedView.classList.add('hidden');
+                openView.classList.remove('hidden');
+            } else {
+                closedView.classList.remove('hidden');
+                openView.classList.add('hidden');
+            }
+        }
+
+        // Simulated music vibe toggle
+        let isPlaying = false;
+        function toggleMusicVibe() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('music-btn');
+            const icon = document.getElementById('play-icon');
+            const title = document.getElementById('song-title');
+            
+            if (isPlaying) {
+                btn.textContent = 'Pause Vibe';
+                btn.classList.add('bg-deeprose', 'text-white');
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                title.textContent = 'Playing: Cozy Friendship Lofi 🌸';
+                spawnHeartBurst();
+            } else {
+                btn.textContent = 'Play Vibe';
+                btn.classList.remove('bg-deeprose', 'text-white');
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                title.textContent = 'Aesthetic Pink Afternoon';
+            }
+        }
+    </script>
+</body>
+</html>
